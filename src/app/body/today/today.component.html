@@ -1,0 +1,32 @@
+<h2 class="text-center">Today</h2>
+<h3 class="text-center">Score - £{{ todayScore }}</h3>    
+<hr>
+<h4 class="text-center">Customers Today</h4>
+<div class="row">
+    <div class="col-xs-11">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Order Date</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Order Value</th>
+                <th scope="col">Associate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [ngClass]="{'bg-success': item.GrossTotalAmount > 200}" *ngFor="let item of items">
+                    <td>{{ item.OrderDate }}</td>
+                    <td>{{ item.CustomerName }}</td>
+                    <td>£{{ item.GrossTotalAmount }}</td>
+                    <td>{{ item.Associate }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+</div>
+<!-- <button class="btn btn-primary" (click)="add100()">Add £100</button> -->
+
+
+
