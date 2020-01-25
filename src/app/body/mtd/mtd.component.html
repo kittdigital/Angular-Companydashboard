@@ -1,27 +1,31 @@
+<script></script>
+
 <h2 class="text-center">Month To Date</h2>
 <h3 class="text-center">Score - £{{ mtdScore }}</h3>
 <hr>
 <h4 class="text-center">Customers This Month</h4>
 <div class="row">
     <div class="col-xs-11">
-        <table class="table">
+        <table mat-table id="dtBasicExample" class="mat-elevation-z5">
             <thead>
               <tr>
-                <th scope="col">Order Date</th>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Order Value</th>
-                <th scope="col">Associate</th>
+                <th mat-header-cell>Order Date</th>
+                <th mat-header-cell>Customer Name</th>
+                <th mat-header-cell>Order Value</th>
+                <th mat-header-cell>Associate</th>
               </tr>
             </thead>
             <tbody>
                 <tr [ngClass]="{'bg-success': item.GrossTotalAmount > 200}" *ngFor="let item of items">
-                    <td>{{ item.OrderDate }}</td>
-                    <td>{{ item.CustomerName }}</td>
-                    <td>£{{ item.GrossTotalAmount }}</td>
-                    <td>{{ item.Associate }}</td>
+                    <td mat-cell>{{ item.OrderDate }}</td>
+                    <td mat-cell>{{ item.CustomerName }}</td>
+                    <td mat-cell>£{{ item.GrossTotalAmount }}</td>
+                    <td mat-cell>{{ item.Associate }}</td>
                 </tr>
             </tbody>
         </table>
+        <!-- Angular 8 Pagination -->
+        <mat-paginator [pageSizeOptions="[5, 10, 15]" showFirstLastButtons></mat-paginator>
 
     </div>
     

@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { MatPaginator } from '@angular/material';
+
+import * as $ from 'jquery';
+declare var jQuery:any;
 
 @Component({
   selector: 'app-mtd',
@@ -8,18 +12,31 @@ import { ApiService } from '../../api.service';
 })
 export class MtdComponent implements OnInit {
 
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+
   items;
   mtdScore = 0;
 
+
+
   constructor(private apiService: ApiService) { 
+    // let basic = document.getElementById("dtBasicExample") as HTMLLinkElement;
+
+    // $(basic).style="display: none;";
+
+
+    // $(document).ready(function () {
+    //   $('#dtBasicExample').DataTable({
+    //     "pagingType": "simple" // false to disable pagination (or any other option)
+    //   });
+    //   $('.dataTables_length').addClass('bs-select');
+    // });
 
     console.log('Constructor Type Of mtdScore: ' + this.mtdScore)
     
     this.apiService.getMonthToDate().subscribe((data)=>{
-      //console.log(data);
-
+    
       this.items = data;
-      //console.log(this.items);
       this.calculateMtd(this.items);
     });
 

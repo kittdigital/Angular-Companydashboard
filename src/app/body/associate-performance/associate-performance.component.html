@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="text-center" style="text-decoration: Underline;">Associate Performance</h2>
+    <div class="row">
+      <div class="col-md-4 text-center" *ngFor="let associate of associates">
+        <h2>{{ associate }}</h2>
+        <hr>
+        <h3>Score - £ {{ getAssociatePerformance('Mohamed Shabbir', data) }}</h3>
+        <br>
+        <h3>Orders - </h3>
+        <br> 
+        <h3>AOV - £</h3>
+        <br>
+        <br>
+        <br>
+        <hr>
+      </div>
+      
+    </div>
+
+  </div>

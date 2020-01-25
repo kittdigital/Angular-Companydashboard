@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { TodayComponent } from './body/today/today.component';
 import { MtdComponent } from './body/mtd/mtd.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AssociatePerformanceComponent } from './body/associate-performance/associate-performance.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     TodayComponent,
-    MtdComponent
+    MtdComponent,
+    AssociatePerformanceComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
  
   ],
   providers: [],
