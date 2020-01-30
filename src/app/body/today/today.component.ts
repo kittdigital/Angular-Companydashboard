@@ -14,6 +14,7 @@ export class TodayComponent implements OnInit {
   statusText;
   items; 
   todayScore = 0;
+  orders = 0;
 
 
   constructor(private apiService: ApiService) { 
@@ -49,7 +50,7 @@ export class TodayComponent implements OnInit {
 
     for (let item in items) {
       this.todayScore += parseFloat(items[item]['GrossTotalAmount']);
-
+      this.orders++;
       console.log(this.todayScore);
     }
 

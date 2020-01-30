@@ -18,7 +18,7 @@ export class AssociatePerformanceComponent implements OnInit {
     this.apiService.getMonthToDate().subscribe((data) => {
 
       this.sales = data;
-      console.log('Individual Associate sales component data: ' + this.sales);
+      // console.log('Individual Associate sales component data: ' + this.sales);
 
     });
 
@@ -29,8 +29,8 @@ export class AssociatePerformanceComponent implements OnInit {
 
   getAssociatePerformance(associate, data) {
     
-    console.log('"associate" variable at start of getAssociatePerformance(): '+ associate);
-    console.log('"data" variable aty start of getAssociatePerformance(): ' + data);
+    // console.log('"associate" variable at start of getAssociatePerformance(): '+ associate);
+    // console.log('"data" variable aty start of getAssociatePerformance(): ' + data);
 
 
   }

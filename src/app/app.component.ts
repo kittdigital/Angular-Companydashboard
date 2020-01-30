@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material';
+
 
 @Component({
   selector: 'app-root',
